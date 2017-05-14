@@ -20,7 +20,7 @@ CUR_DIR=$(pwd)
 CONTAINER_NAME_FILE="container.cfg"
 
 # Resource Limitations
-MEM_SIZE="1024m" # The maximum amount of memory the container can use
+MEM_SIZE="2048m" # The maximum amount of memory the container can use
 MEM_SWAP_RATIO="40" 
 MEM_SWAP="8192m" # The amount of memory this container is allowed to swap to disk
 
