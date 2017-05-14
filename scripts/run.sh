@@ -11,9 +11,10 @@ set -o pipefail   # return the exit status of the last command in the pipe
 set -o nounset    # treat unset variables and parameters as an error
 
 HOST_PORT=8585
-PROXY_NAME="jira.muncic.local"
+PROXY_NAME="cla-airsoft.duckdns.org"
 PROXY_PORT=80
 PROXY_SCHEME="http"
+JIRA_CONTEXT="jira"
 CONTAINER_NAME="jira"
 CUR_DIR=$(pwd)
 CONTAINER_NAME_FILE="container.cfg"
@@ -45,6 +46,7 @@ RESULT=$(docker run -d --name ${CONTAINER_NAME} \
 	-e JIRA_PROXY_NAME=${PROXY_NAME} \
 	-e JIRA_PROXY_PORT=${PROXY_PORT} \
 	-e JIRA_PROXY_SCHEME=${PROXY_SCHEME} \
+	-e JIRA_CONTEXT_PATH=${JIRA_CONTEXT} \
 	$IMAGE_NAME)
 
 if [ "$?" -eq "0" ] ; then
